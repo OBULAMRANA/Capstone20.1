@@ -1,8 +1,11 @@
 # Project: Capstone Project
 # Author:Rana Obulam
-## DataSource from kaggle : https://www.kaggle.com/datasets/gpandi007/usa-housing-dataset
-## DataSource in GITHUB: https://github.com/OBULAMRANA/Capstone20.1/blob/main/US_House_Data.csv
-##  Python Jupiter NodeBook Code : 
+### DataSource from kaggle : 
+https://www.kaggle.com/datasets/gpandi007/usa-housing-dataset
+### DataSource in GITHUB: 
+https://github.com/OBULAMRANA/Capstone20.1/blob/main/US_House_Data.csv
+###  Python Jupiter NodeBook Code : 
+https://github.com/OBULAMRANA/Capstone20.1/blob/main/Capstone20_1.ipynb
 
 
 ## House Price Prediction Using The Dataset
