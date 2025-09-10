@@ -13,16 +13,12 @@ The  project is to identify  effective ways for predicting housing price based o
 ### Dataset information
 This dataset contains a wide variety of columns, offering a rich foundation for applying various encoding techniques for categorical data. By combining both numerical and categorical features, it becomes possible to build robust pipeline models for predicting house sale prices.
 
-Given dataset has 1460 entries with 81columns
+Given dataset has 
+Total number of columns : 81
+Total number of rows : 1460
 
+<img width="795" height="411" alt="image" src="https://github.com/user-attachments/assets/e5625eb5-4d76-4e83-811b-5bbb7d282c5b" />
 
-Id	MSSubClass	MSZoning	LotFrontage	LotArea	Street	Alley	LotShape	LandContour	Utilities	...	PoolArea	PoolQC	Fence	MiscFeature	MiscVal	MoSold	YrSold	SaleType	SaleCondition	SalePrice
-0	1	60	RL	65.0	8450	Pave	NaN	Reg	Lvl	AllPub	...	0	NaN	NaN	NaN	0	2	2008	WD	Normal	208500
-1	2	20	RL	80.0	9600	Pave	NaN	Reg	Lvl	AllPub	...	0	NaN	NaN	NaN	0	5	2007	WD	Normal	181500
-2	3	60	RL	68.0	11250	Pave	NaN	IR1	Lvl	AllPub	...	0	NaN	NaN	NaN	0	9	2008	WD	Normal	223500
-3	4	70	RL	60.0	9550	Pave	NaN	IR1	Lvl	AllPub	...	0	NaN	NaN	NaN	0	2	2006	WD	Abnorml	140000
-4	5	60	RL	84.0	14260	Pave	NaN	IR1	Lvl	AllPub	...	0	NaN	NaN	NaN	0	12	2008	WD	Normal	250000
-5 rows × 81 columns
 
 
 ## House Price Prediction Using The Dataset
