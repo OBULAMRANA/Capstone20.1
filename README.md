@@ -1,4 +1,10 @@
-# Capstone20.1
+# Project: Capstone Project
+# Author:Rana Obulam
+## DataSource from kaggle : https://www.kaggle.com/datasets/gpandi007/usa-housing-dataset
+## DataSource in GITHUB: https://github.com/OBULAMRANA/Capstone20.1/blob/main/US_House_Data.csv
+##  Python Jupiter NodeBook Code : 
+
+
 ## House Price Prediction Using The Dataset
 An overview of the question to be solved in the capstone :
 housing price are more volatile and depends on different factors. This project is to identify more effective ways for predicting housing price
