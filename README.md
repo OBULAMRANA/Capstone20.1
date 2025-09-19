@@ -22,6 +22,7 @@ Total number of rows : 1460
 
 ###  Data Cleaning and EDA
 #### Date Understanding 
+```
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 1460 entries, 0 to 1459
 Data columns (total 81 columns):
@@ -110,9 +111,9 @@ Data columns (total 81 columns):
  80  SalePrice      1460 non-null   int64  
 dtypes: float64(3), int64(35), object(43)
 memory usage: 924.0+ KB
-
+```
 ## Removing the data that is having missing values and having unique values that are not required.
-
+```
 Unique values in column MSZoning: ['RL' 'RM' 'C (all)' 'FV' 'RH']
 Unique values in column Street: ['Pave' 'Grvl']
 Unique values in column LotShape: ['Reg' 'IR1' 'IR2' 'IR3']
@@ -137,7 +138,7 @@ Unique values in column GarageCond: ['TA' 'Fa' nan 'Gd' 'Po' 'Ex']
 Unique values in column PavedDrive: ['Y' 'N' 'P']
 Total categorical column in cdf dataset is: 22
 Applying Ordinal encoding techniques for some of the Caterogical data columns
-
+```
 
 ##  Heatmap on the dataset 
 
@@ -145,7 +146,7 @@ Applying Ordinal encoding techniques for some of the Caterogical data columns
 
 ## Applying Ordinal encoding techniques for some of the Caterogical data columns
 
-
+```
 # Unique values in column Street: ['Pave' 'Grvl']
 Street_map = {"Grvl": 0, "Pave": 1}
 cdf['Street'] = cdf['Street'].map(Street_map)
@@ -165,15 +166,16 @@ cdf['Utilities'] = cdf['Utilities'].map(Utilities_map)
 # Unique values in column LotConfig: ['Inside' 'FR2' 'Corner' 'CulDSac' 'FR3']
 LotConfig_map = {"Inside": 0, "FR2": 1, "FR3": 2, "Corner":3, "CulDSac":4}
 cdf['LotConfig'] = cdf['LotConfig'].map(LotConfig_map)
-
+```
 ## headmap using the calculated correlation matrix
+```
 sns.set_style('whitegrid')
 plt.figure(figsize=(20,20))
 corr = cdf[numerical_columns_cdf].corr()
 mask = np.triu(np.ones_like(corr, dtype=bool))
 sns.heatmap(corr, annot=True, cmap='coolwarm',mask=mask)
 plt.tight_layout()
-
+```
  <img width="1847" height="1990" alt="image" src="https://github.com/user-attachments/assets/8e1cfce7-6f48-4385-a2bf-8fca159b963b" />
 
  
