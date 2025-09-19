@@ -177,6 +177,16 @@ plt.tight_layout()
  <img width="1847" height="1990" alt="image" src="https://github.com/user-attachments/assets/8e1cfce7-6f48-4385-a2bf-8fca159b963b" />
 
  
+## Interpritation of Evalution Matrics
 
+### Evaluate the model: 
+
+It calculates and prints three evaluation metrics: 
+
+Mean Squared Error (MSE): Measures the average squared difference between actual and predicted values. The value of 0.0228 indicates that model evaluation is prety decent. 
+
+Root Mean Squared Error (RMSE): The square root of MSE, providing an error metric in the same units as the target variable. Value of RMSE 0.151 indicates that the value is low indicates that the model has less errors. 
+
+R-squared (R2): Represents the proportion of variance in the target variable explained by the model. It is a generic matric and can be used for baseline model, and closer to 1 is better.
 
 
