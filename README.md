@@ -110,16 +110,73 @@ Data columns (total 81 columns):
  80  SalePrice      1460 non-null   int64  
 dtypes: float64(3), int64(35), object(43)
 memory usage: 924.0+ KB
-## House Price Prediction Using The Dataset
-An overview of the question to be solved in the capstone :
-housing price are more volatile and depends on different factors. This project is to identify more effective ways for predicting housing price
 
-## Identification of the type of data that will be used to solve the question:
-The dataset will contain the house related information like area, built year, lot size, number of bed rooms, rest rooms,sale price ...etc
+## Removing the data that is having missing values and having unique values that are not required.
 
-## List of 1–3 techniques that could be used to answer the question identified.:
-Exploratory Data Analysis (EDA): Data preparation, Cleaning the data, Understand the data, examine relationships using visualizations such as histograms, scatter plots, and heatmaps.
+Unique values in column MSZoning: ['RL' 'RM' 'C (all)' 'FV' 'RH']
+Unique values in column Street: ['Pave' 'Grvl']
+Unique values in column LotShape: ['Reg' 'IR1' 'IR2' 'IR3']
+Unique values in column LandContour: ['Lvl' 'Bnk' 'Low' 'HLS']
+Unique values in column Utilities: ['AllPub' 'NoSeWa']
+Unique values in column LotConfig: ['Inside' 'FR2' 'Corner' 'CulDSac' 'FR3']
+Unique values in column LandSlope: ['Gtl' 'Mod' 'Sev']
+Unique values in column BldgType: ['1Fam' '2fmCon' 'Duplex' 'TwnhsE' 'Twnhs']
+Unique values in column ExterQual: ['Gd' 'TA' 'Ex' 'Fa']
+Unique values in column ExterCond: ['TA' 'Gd' 'Fa' 'Po' 'Ex']
+Unique values in column BsmtQual: ['Gd' 'TA' 'Ex' nan 'Fa']
+Unique values in column BsmtCond: ['TA' 'Gd' nan 'Fa' 'Po']
+Unique values in column BsmtExposure: ['No' 'Gd' 'Mn' 'Av' nan]
+Unique values in column HeatingQC: ['Ex' 'Gd' 'TA' 'Fa' 'Po']
+Unique values in column CentralAir: ['Y' 'N']
+Unique values in column Electrical: ['SBrkr' 'FuseF' 'FuseA' 'FuseP' 'Mix' nan]
+Unique values in column KitchenQual: ['Gd' 'TA' 'Ex' 'Fa']
+Unique values in column FireplaceQu: [nan 'TA' 'Gd' 'Fa' 'Ex' 'Po']
+Unique values in column GarageFinish: ['RFn' 'Unf' 'Fin' nan]
+Unique values in column GarageQual: ['TA' 'Fa' 'Gd' nan 'Ex' 'Po']
+Unique values in column GarageCond: ['TA' 'Fa' nan 'Gd' 'Po' 'Ex']
+Unique values in column PavedDrive: ['Y' 'N' 'P']
+Total categorical column in cdf dataset is: 22
+Applying Ordinal encoding techniques for some of the Caterogical data columns
 
-Principal Component Analysis (PCA) & : Reduce dimensionality to identify and retain the most significant features contributing to house price.
 
-Clustering : Apply clustering to uncover groups of houses with similar catagories like built-year, price, area. These clusters can offer insight on sale/price patterns and may be used as additional features in the final predictive model.
+##  Heatmap on the dataset 
+
+<img width="619" height="510" alt="image" src="https://github.com/user-attachments/assets/6618ab7d-a45b-4103-98d4-666b11015aa6" />
+
+## Applying Ordinal encoding techniques for some of the Caterogical data columns
+
+
+# Unique values in column Street: ['Pave' 'Grvl']
+Street_map = {"Grvl": 0, "Pave": 1}
+cdf['Street'] = cdf['Street'].map(Street_map)
+
+# Unique values in column LotShape: ['Reg' 'IR1' 'IR2' 'IR3']
+LotShape_map = {"IR3": 0, "IR2": 1, "IR1": 2, "Reg": 3}
+cdf['LotShape'] = cdf['LotShape'].map(LotShape_map)
+
+# Unique values in column LandContour: ['Lvl' 'Bnk' 'Low' 'HLS']
+LandContour_map = {"Low": 0, "Lvl": 1, "Bnk": 2, "HLS": 3}
+cdf['LandContour'] = cdf['LandContour'].map(LandContour_map)
+
+# Unique values in column Utilities: ['AllPub' 'NoSeWa']
+Utilities_map = {"NoSeWa": 0, "AllPub": 1}
+cdf['Utilities'] = cdf['Utilities'].map(Utilities_map)
+
+# Unique values in column LotConfig: ['Inside' 'FR2' 'Corner' 'CulDSac' 'FR3']
+LotConfig_map = {"Inside": 0, "FR2": 1, "FR3": 2, "Corner":3, "CulDSac":4}
+cdf['LotConfig'] = cdf['LotConfig'].map(LotConfig_map)
+
+## headmap using the calculated correlation matrix
+sns.set_style('whitegrid')
+plt.figure(figsize=(20,20))
+corr = cdf[numerical_columns_cdf].corr()
+mask = np.triu(np.ones_like(corr, dtype=bool))
+sns.heatmap(corr, annot=True, cmap='coolwarm',mask=mask)
+plt.tight_layout()
+
+ <img width="1847" height="1990" alt="image" src="https://github.com/user-attachments/assets/8e1cfce7-6f48-4385-a2bf-8fca159b963b" />
+
+ 
+
+
+
